@@ -15,10 +15,10 @@ For example, `module1` would be loaded twice when the dependency graph looks lik
 
 ## USAGE
 
-Require `module-singleton` at the top of your module, pass directory that contains `package.json`.
+Require `module-singleton` at the top of your module, pass `package.json`.
 
 ```js
-require('module-singleton')(__dirname);
+require('module-singleton')(require('./package.json'));
 ```
 
 ##LICENSE

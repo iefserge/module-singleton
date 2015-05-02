@@ -14,12 +14,16 @@
 
 var path = require('path');
 
-module.exports = function(dirname) {
-  var name = require(path.resolve(dirname, 'package.json')).name;
+module.exports = function(package) {
+  if (typeof package.name !== 'string') {
+    throw new Error('unknown package name');
+  }
+
+  var name = package.name;
   var key = '__module__' + name;
 
   if (global[key]) {
-    throw new Error('multiple copies of "' + name + '" loaded')
+    throw new Error('trying to load "' + name + '" more than once')
   }
 
   global[key] = true;

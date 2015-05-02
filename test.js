@@ -17,12 +17,12 @@ var singleton = require('./');
 
 test('simple test', function(t) {
   t.doesNotThrow(function() {
-    singleton(__dirname);
+    singleton(require('./package.json'));
   });
 
   t.throws(function() {
     try {
-      singleton(__dirname);
+      singleton(require('./package.json'));
     } catch (e) {
       t.ok(e.message.indexOf('module-singleton') >= 0);
       throw e;
