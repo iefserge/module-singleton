@@ -1,6 +1,6 @@
 {
   "name": "module-singleton",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Throw an error when the same module loaded more than once",
   "main": "index.js",
   "scripts": {
